@@ -3,16 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="toDoList.js" defer></script>
+    <script src="toDoList.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Oskar Popik's To Do List</title>
   </head>
   <body>
-    <h1>Oskar Popik's To Do List</h1>
-    <input id="activityInput" type="text" /> <button id="addButton">Add</button>
-    <ol id="listOfActivities">
-      <li>Activity 1<button>Delete</button><button>Done</button></li>
-      <li>Acitivty 2<button>Delete</button><button>Done</button></li>
+    <h2>Oskar Popik's To Do List</h2>
+    <input id="taskInput" type="text" /> <button id="addButton">Add</button>
+    <ol id="taskList" class="task-list">
+      <!-- <li>
+        Activity 1
+        <select class="status-option">
+          <option value="new">New</option>
+          <option value="inProgress">In Progress</option>
+          <option value="done">Done</option>
+        </select>
+        <button>Delete</button>
+      </li>
+      <li>
+        Acitivty 2
+        <button>Done</button>
+        <button>Delete</button>
+      </li> -->
     </ol>
   </body>
 </html>
