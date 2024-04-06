@@ -1,6 +1,3 @@
-// WILL USE THIS LATER ON
-function updateTaskList() {}
-
 function saveTask() {
   const inputElement = document.getElementById("taskInput");
   // X.value refers to the value of input data done by the user in the input window
@@ -24,8 +21,11 @@ function saveTask() {
   localStorage.newTask = JSON.stringify(taskArray);
 
   displayTask();
-  // WILL USE THIS LATER ON
-  updateTaskList();
+}
+
+// The following 2 lines of code was adapted from https://www.geeksforgeeks.org/html-clearing-the-input-field/ Accessed: 2024-04-26
+function clearInputField() {
+  taskInput.value = "";
 }
 
 function displayTask() {
@@ -51,6 +51,21 @@ function displayTask() {
       deleteButtonElement.classList.add("delete-button");
       deleteButtonElement.innerText = "Delete";
 
+      // Remove a task
+      deleteButtonElement.addEventListener("click", () => {
+        // Geting the corresponding index of the chosen task in the taskArray
+        const taskIndex = taskArray.indexOf(task);
+
+        // Removing the chosen task from the taskArray
+        taskArray.splice(taskIndex, 1);
+
+        // Update of the localstorage
+        localStorage.newTask = JSON.stringify(taskArray);
+
+        // Refresh of the task display
+        displayTask();
+      });
+
       liElement.appendChild(doneButtonElement);
       liElement.appendChild(deleteButtonElement);
 
@@ -63,6 +78,7 @@ function loadHandler() {
   const addButtonElement = document.getElementById("addButton");
   addButtonElement.addEventListener("click", function () {
     saveTask();
+    clearInputField();
   });
   displayTask();
 }
