@@ -23,9 +23,10 @@ function saveTask() {
   displayTask();
 }
 
-// The following 2 lines of code was adapted from https://www.geeksforgeeks.org/html-clearing-the-input-field/ Accessed: 2024-04-26
+// The following 2 lines of code was adapted from https://www.geeksforgeeks.org/html-clearing-the-input-field/ Accessed: 2024-04-06
 function clearInputField() {
-  taskInput.value = "";
+  const inputElement = document.getElementById("taskInput");
+  inputElement.value = "";
 }
 
 function displayTask() {
@@ -46,6 +47,24 @@ function displayTask() {
       const doneButtonElement = document.createElement("button");
       doneButtonElement.classList.add("done-button");
       doneButtonElement.innerText = "Done";
+
+      // Mark the task as completed
+      doneButtonElement.addEventListener("click", () => {
+        // Geting the corresponding index of the chosen task in the taskArray
+        const taskIndex = taskArray.indexOf(task);
+
+        // Check if this line gives the correct value
+        console.log(taskArray[taskIndex].taskStatus);
+
+        // The following line of code was adapted from https://www.geeksforgeeks.org/how-to-toggle-a-boolean-using-javascript/ Accessed: 2024-04-07
+        taskArray[taskIndex].taskStatus = !taskArray[taskIndex].taskStatus;
+
+        // Update of the localstorage
+        localStorage.newTask = JSON.stringify(taskArray);
+
+        // Refresh of the task display
+        displayTask();
+      });
 
       const deleteButtonElement = document.createElement("button");
       deleteButtonElement.classList.add("delete-button");
