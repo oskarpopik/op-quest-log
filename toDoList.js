@@ -42,11 +42,27 @@ function displayTask() {
     for (let task of taskArray) {
       const liElement = document.createElement("li");
       liElement.classList.add("task-list-item");
-      liElement.innerText = task.taskName + " / " + task.taskStatus + " ";
+
+      const divElement = document.createElement("div");
+      divElement.classList.add("task-flex-container");
+
+      const spanElement = document.createElement("span");
+      spanElement.classList.add("task-content");
+      spanElement.innerText = task.taskName;
+
+      // Change the look of the task in the list based on it's status. By default the boolean value is false.
+      if (task.taskStatus === true) {
+        spanElement.classList.add("task-content-done");
+      } else {
+        spanElement.classList.remove("task-content-done");
+      }
+
+      const divButtonsElement = document.createElement("div");
+      divButtonsElement.classList.add("task-buttons");
 
       const doneButtonElement = document.createElement("button");
       doneButtonElement.classList.add("done-button");
-      doneButtonElement.innerText = "Done";
+      doneButtonElement.innerText = "🪄";
 
       // Mark the task as completed
       doneButtonElement.addEventListener("click", () => {
@@ -68,7 +84,7 @@ function displayTask() {
 
       const deleteButtonElement = document.createElement("button");
       deleteButtonElement.classList.add("delete-button");
-      deleteButtonElement.innerText = "Delete";
+      deleteButtonElement.innerText = "⚔️";
 
       // Remove a task
       deleteButtonElement.addEventListener("click", () => {
@@ -85,8 +101,13 @@ function displayTask() {
         displayTask();
       });
 
-      liElement.appendChild(doneButtonElement);
-      liElement.appendChild(deleteButtonElement);
+      divButtonsElement.appendChild(doneButtonElement);
+      divButtonsElement.appendChild(deleteButtonElement);
+
+      divElement.appendChild(spanElement);
+      divElement.appendChild(divButtonsElement);
+
+      liElement.appendChild(divElement);
 
       taskListElement.appendChild(liElement);
     }

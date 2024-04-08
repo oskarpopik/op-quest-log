@@ -5,26 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="toDoList.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <title>Oskar Popik's To Do List</title>
+    <link rel="stylesheet" href="https://use.typekit.net/nqc2vnl.css" />
+    <title>Quest Log for Daily Adventures</title>
   </head>
   <body>
-    <h2>Oskar Popik's To Do List</h2>
-    <input id="taskInput" type="text" /> <button id="addButton">Add</button>
-    <ol id="taskList" class="task-list">
-      <!-- <li>
-        Activity 1
-        <select class="status-option">
-          <option value="new">New</option>
-          <option value="inProgress">In Progress</option>
-          <option value="done">Done</option>
-        </select>
-        <button>Delete</button>
-      </li>
-      <li>
-        Acitivty 2
-        <button>Done</button>
-        <button>Delete</button>
-      </li> -->
-    </ol>
+    <div class="container">
+      <h2>Quest Log for Daily Adventures</h2>
+      <div class="input-container">
+        <input
+          id="taskInput"
+          class="task-input"
+          type="text"
+          placeholder="Plot a new quest"
+        />
+        <button id="addButton" class="add-button">📜</button>
+      </div>
+      <ol id="taskList" class="task-list"></ol>
+    </div>
   </body>
 </html>

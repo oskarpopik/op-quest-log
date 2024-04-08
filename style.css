@@ -1,0 +1,150 @@
+* {
+  font-family: "cabazon";
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  --darken: #000049;
+  --ivory: #fefbea;
+  --reddish: #fe0049;
+  --bluish: #00a7e8;
+  --yellowish: #f7f701;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 5vw 90vw 5vw;
+  color: var(--darken);
+  background-color: var(--ivory);
+}
+
+.container {
+  grid-column: 2;
+  justify-self: stretch;
+  align-self: center;
+  /* REMOVE LATER */
+  /* outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--darken); */
+  /* END */
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 1vw;
+  font-weight: 600;
+}
+
+.input-container {
+  display: flex;
+}
+
+.task-input {
+  font-size: 2rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 5px 5px;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  /* box-sizing: border-box - It includes the padding and the border in the elements widht and height */
+  box-sizing: border-box;
+  border: 1px solid var(--ivory);
+  border-radius: 5px;
+  outline: none;
+  background: #fafafa;
+}
+
+/* The following 3 lines of code was adapted from https://www.w3schools.com/howto/howto_css_placeholder.asp Accessed: 2024-04-08 */
+::placeholder {
+  color: var(--darken);
+  opacity: 0.3;
+}
+
+.task-input:focus-visible {
+  border: 1px solid var(--darken);
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  padding-left: 3vw;
+}
+
+.task-list-item {
+  font-size: 2rem;
+  padding-left: 1vw;
+  color: var(--darken);
+}
+
+.task-flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.task-content,
+.task-content-done {
+  margin-right: 1vw;
+  /* The following 6 lines of code was adapted from https://www.w3schools.com/cssref/css3_pr_text-overflow.php Accessed: 2024-04-08 */
+  /* Prevents text from wrapping */
+  white-space: nowrap;
+  /* Hides overflowing text */
+  overflow: hidden;
+  /* Adds "..." to indicate that overflow text is hidden */
+  text-overflow: ellipsis;
+}
+
+.task-content-done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-buttons {
+  /* Prevents buttons from shrinking */
+  flex-shrink: 0;
+}
+
+.add-button,
+.done-button,
+.delete-button {
+  font-size: 1.5rem;
+  width: 3rem;
+  padding: 5px 5px;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  /* box-sizing: border-box - It includes the padding and the border in the elements widht and height */
+  box-sizing: border-box;
+  border: 1px solid var(--ivory);
+  border-radius: 5px;
+  outline: none;
+  background-color: var(--darken);
+  color: #fafafa;
+  cursor: pointer;
+}
+
+.add-button {
+  margin-right: 2vw;
+}
+
+.delete-button {
+  background-color: var(--reddish);
+}
+
+.add-button:hover,
+.done-button:hover,
+.delete-button:hover {
+  background-color: #fafafa;
+  color: var(--darken);
+  border: 1px solid var(--darken);
+}
