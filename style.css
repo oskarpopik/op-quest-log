@@ -94,13 +94,14 @@ h2 {
 .task-content,
 .task-content-done {
   margin-right: 1vw;
+  /* Needed to comment this out, because it restricted the visibility of numbers of the list in Safari
   /* The following 6 lines of code was adapted from https://www.w3schools.com/cssref/css3_pr_text-overflow.php Accessed: 2024-04-08 */
   /* Prevents text from wrapping */
-  white-space: nowrap;
+  /* white-space: nowrap; */
   /* Hides overflowing text */
-  overflow: hidden;
+  /* overflow: hidden; */
   /* Adds "..." to indicate that overflow text is hidden */
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
 }
 
 .task-content-done {
