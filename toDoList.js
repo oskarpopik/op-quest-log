@@ -120,7 +120,21 @@ function loadHandler() {
     saveTask();
     clearInputField();
   });
+
+  const inputElement = document.getElementById("taskInput");
+
+  // Allows to add an event by pressing "Enter" on keyboard
+  // The following 6 lines of code was adapted from https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp Accessed: 2024-04-11
+  inputElement.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      addButtonElement.click();
+    }
+  });
   displayTask();
+
+  // Makes the input field active right after the page is loaded
+  inputElement.focus();
 }
 
 window.addEventListener("load", loadHandler);
