@@ -5,18 +5,18 @@
 }
 
 html {
-  --darken: #000049;
-  --ivory: #fefbea;
-  --reddish: #fe0049;
-  --bluish: #00a7e8;
-  --yellowish: #f7f701;
+  --indigo: #0f3d6b;
+  --timberwolf: #e2dcdb;
+  --silver: #bbb6b5;
+  --rose: #946969;
+  --teal: #097480;
 }
 
 body {
   display: grid;
   grid-template-columns: 5vw 90vw 5vw;
-  color: var(--darken);
-  background-color: var(--ivory);
+  color: var(--indigo);
+  background-color: var(--silver);
 }
 
 .container {
@@ -26,7 +26,7 @@ body {
   /* REMOVE LATER */
   /* outline-style: solid;
   outline-width: 2px;
-  outline-color: var(--darken); */
+  outline-color: var(--indigo); */
   /* END */
 }
 
@@ -51,20 +51,20 @@ h2 {
   margin-right: 1vw;
   /* box-sizing: border-box - It includes the padding and the border in the elements widht and height */
   box-sizing: border-box;
-  border: 1px solid var(--ivory);
+  border: 1px solid var(--silver);
   border-radius: 5px;
   outline: none;
-  background: #fafafa;
+  background: var(--timberwolf);
 }
 
 /* The following 3 lines of code was adapted from https://www.w3schools.com/howto/howto_css_placeholder.asp Accessed: 2024-04-08 */
 ::placeholder {
-  color: var(--darken);
+  color: var(--indigo);
   opacity: 0.3;
 }
 
 .task-input:focus-visible {
-  border: 1px solid var(--darken);
+  border: 1px solid var(--indigo);
 }
 
 .task-list {
@@ -81,7 +81,7 @@ h2 {
 .task-list-item {
   font-size: 2rem;
   padding-left: 1vw;
-  color: var(--darken);
+  color: var(--indigo);
 }
 
 .task-flex-container {
@@ -126,10 +126,10 @@ h2 {
   margin-right: 1vw;
   /* box-sizing: border-box - It includes the padding and the border in the elements widht and height */
   box-sizing: border-box;
-  border: 1px solid var(--ivory);
+  border: 1px solid var(--silver);
   border-radius: 5px;
   outline: none;
-  background-color: var(--darken);
+  background-color: var(--indigo);
   color: #fafafa;
   cursor: pointer;
 }
@@ -139,13 +139,17 @@ h2 {
 }
 
 .delete-button {
-  background-color: var(--reddish);
+  background-color: var(--rose);
+}
+
+.done-button {
+  background-color: var(--teal);
 }
 
 .add-button:hover,
 .done-button:hover,
 .delete-button:hover {
-  background-color: #fafafa;
-  color: var(--darken);
-  border: 1px solid var(--darken);
+  background-color: var(--silver);
+  color: var(--indigo);
+  border: 1px solid var(--indigo);
 }
